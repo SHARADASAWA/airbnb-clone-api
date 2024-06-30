@@ -4,12 +4,13 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 require('dotenv').config();
 
-app.use(cors({
-  origin:"http://localhost:5173/"
-}));
+
 const app = express();
 app.use(bodyParser.json());
 
+app.use(cors({
+  origin:"http://localhost:5173/"
+}));
 const propertyRouter = require('./routes/property');
 app.use('/api/properties', propertyRouter);
 
