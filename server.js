@@ -8,9 +8,7 @@ require('dotenv').config();
 const app = express();
 app.use(bodyParser.json());
 
-app.use(cors({
-  origin:"http://localhost:5173"
-}));
+app.use(cors());
 const propertyRouter = require('./routes/property');
 app.use('/api/properties', propertyRouter);
 
